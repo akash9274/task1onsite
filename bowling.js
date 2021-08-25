@@ -9,17 +9,11 @@ function getvalue(x){
     console.log(x)
 
     var randomnum=Math.floor(Math.random()*6)+1
-    const playernumb =document.createElement("div")
-    const newcontent= document.createTextNode("PLAYER NUMBER : " + x)
+    const playernumb =document.getElementById("player")
+    const computernumb =document.getElementById("comp")
+    playernumb.innerHTML="PLAYER NUMBER : " + x
 
-    playernumb.appendChild(newcontent)
-    document.body.appendChild(playernumb)
-
-    const computernumb =document.createElement("div")
-    const newcontent2= document.createTextNode("COMPUTER GENERATED NUMBER : " + randomnum)
-
-    computernumb.appendChild(newcontent2)
-    document.body.appendChild(computernumb)
+    computernumb.innerHTML="COMPUTER GENERATED NUMBER : " + randomnum
 
     if(randomnum==x&&y==0){
         const bowlingdisplay =document.createElement("div")
@@ -41,6 +35,5 @@ function getvalue(x){
     {alert("YOU HAVE WON")
     location.reload()}
 }
-
 
     

@@ -11,6 +11,7 @@ function getvalue(x){
     var randomnum=Math.floor(Math.random()*6)+1
     const playernumb =document.getElementById("player")
     const computernumb =document.getElementById("comp")
+    let scoreboard =document.getElementById("score")
     playernumb.innerHTML="PLAYER NUMBER : " + x
 
     computernumb.innerHTML="COMPUTER GENERATED NUMBER : " + randomnum
@@ -27,13 +28,15 @@ function getvalue(x){
         window.location.reload()
     }
     else if(y==0)
-    bowlingscore+=x
+    {bowlingscore+=x
+    scoreboard.innerHTML="Bowling with score of "+bowlingscore
+    }
     else if(y==1)
-    battingscore+=x
-
+    {battingscore+=x
+    scoreboard.innerHTML="Batting with target of "+battingscore
+    }
     if(battingscore>bowlingscore)
     {alert("YOU HAVE WON")
     location.reload()}
 }
-
     

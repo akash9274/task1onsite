@@ -10,6 +10,7 @@ function getvalue(x){
 
     const playernumb =document.getElementById("player")
     const computernumb =document.getElementById("comp")
+    let scoreboard =document.getElementById("score")
     playernumb.innerHTML="PLAYER NUMBER : " + x
 
     computernumb.innerHTML="COMPUTER GENERATED NUMBER : " + randomnum
@@ -29,16 +30,16 @@ function getvalue(x){
         window.location.reload()
     }
     else if(y==0)
-    battingscore= battingscore+x
+    {battingscore= battingscore+x
+    scoreboard.innerHTML="Batting with score of "+battingscore
+    }
     else if(y==1)
-    bowlingscore= bowlingscore+x
+    {bowlingscore= bowlingscore+x
+    scoreboard.innerHTML="Bowling with target of "+bowlingscore
+    }
 
     if(bowlingscore>battingscore)
     {alert("YOU HAVE LOST ")
     location.reload()}
 
 }
-
-
-
-

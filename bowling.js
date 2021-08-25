@@ -1,8 +1,9 @@
 var randomnum
 
-var score = 0
+var battingscore = 0
+var bowlingscore =0
 var newnumb = document.createElement("div")
-
+var y=0
 
 function getvalue(x){
     console.log(x)
@@ -20,12 +21,26 @@ function getvalue(x){
     computernumb.appendChild(newcontent2)
     document.body.appendChild(computernumb)
 
-    if(randomnum==x){
-        alert("YOU HAVE BEEN BOWLED OUT WITH SCORE OF "+score)
-        document.location.reload()
+    if(randomnum==x&&y==0){
+        const bowlingdisplay =document.createElement("div")
+        const content= document.createTextNode("BATTING WITH SCORE TO BEAT : " + bowlingscore)
+        bowlingdisplay.appendChild(content)
+        document.body.appendChild(bowlingdisplay)
+        y=1
     }
-    else
-    score= score+randomnum
+    else if(randomnum==x&&y==1&&bowlingscore>battingscore){
+        alert("YOU HAVE LOST BY"+(bowlingscore-battingscore))
+        window.location.reload()
+    }
+    else if(y==0)
+    bowlingscore+=x
+    else if(y==1)
+    battingscore+=x
+
+    if(battingscore>bowlingscore)
+    {alert("YOU HAVE WON")
+    location.reload()}
+}
+
 
     
-}
